@@ -1,11 +1,18 @@
+import { useState } from "react";
+import Header from "./components/Header";
+import SunHeader from "./components/SunHeader.jsx";
+import { MenuContext } from "./context.js";
 
-function App() {
-  
+const App = () => {
+  const [menu, setMenu] = useState(false);
   return (
     <>
-      
+      <MenuContext.Provider value={{ menu, setMenu }}>
+        <Header />
+        <SunHeader />
+      </MenuContext.Provider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
